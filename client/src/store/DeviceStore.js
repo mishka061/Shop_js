@@ -21,7 +21,11 @@ export default class DeviceStore {
         ]
         this._devices = [
             {id: 1, name: "A12", price: 10000, rating: 0, img: `5289e2ca-2f0b-4aa8-a19c-abbcf88d7711.jpg`},
-            {id: 2, name: "A52", price: 28000, rating: 0, img: `14209478-fbdd-4bcc-9e78-78d163856d98.jpg`}
+            {id: 2, name: "A52", price: 28000, rating: 0, img: `14209478-fbdd-4bcc-9e78-78d163856d98.jpg`},
+            {id: 3, name: "A12", price: 10000, rating: 0, img: `5289e2ca-2f0b-4aa8-a19c-abbcf88d7711.jpg`},
+            {id: 4, name: "A52", price: 28000, rating: 0, img: `14209478-fbdd-4bcc-9e78-78d163856d98.jpg`},
+            {id: 5, name: "A12", price: 10000, rating: 0, img: `5289e2ca-2f0b-4aa8-a19c-abbcf88d7711.jpg`},
+            {id: 6, name: "A52", price: 28000, rating: 0, img: `14209478-fbdd-4bcc-9e78-78d163856d98.jpg`},
         ]
         this._selectedType = {}
         this._selectedBrand = {}
@@ -52,7 +56,7 @@ export default class DeviceStore {
     get brands() {
         return this._brands
     }
-    get device() {
+    get devices() {
         return this._devices
     }
     get selectedType(){

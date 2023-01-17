@@ -4,15 +4,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {NavLink} from "react-router-dom";
 import {Button, Container} from "react-bootstrap";
-import {observer} from "mobx-react-lite";
+import {observer} from "mobx-react-lite";//для работы в реальном времени
 import {Context} from "../index";
 import {SHOP_ROUTE} from "../utils/consts";
-//для работы в реальном времени
 
+//если пользователь авторизован,отображаем первый блок Если нет,то второй
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
-    //если пользователь авторизован,отображаем первый блок Если нет,то второй
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
