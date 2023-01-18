@@ -1,10 +1,41 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Button, Container} from "react-bootstrap";
+import CreateBrand from "../components/modals/CreateBrand"; //модальные окна
+import CreateType from "../components/modals/CreateType";
+import CreateDevice from "../components/modals/CreateDevice";
 
 const Admin = () => {
+    const [brandVisible, setBrandVisible] = useState(false) // Состояния,которые отвечают за видимость модального окна
+    const [typedVisible, setTypeVisible] = useState(false)
+    const [deviceVisible, setDeviceVisible] = useState(false)
     return (
-        <div>
-            Admin page
-        </div>
+        <Container className="d-flex flex-column">
+            <Button
+                variant={"outline-dark"}
+                className="mt-4 p-2"
+                onClick={() => setTypeVisible(true)}
+            >
+                Добавить тип
+            </Button>
+            <Button
+                variant={"outline-dark"}
+                className="mt-4 p-2"
+                onClick={() => setDeviceVisible(true)}
+            >
+                Добавить бренд
+            </Button>
+            <Button
+                variant={"outline-dark"}
+                className="mt-4 p-2"
+                onClick={() => setBrandVisible(true)}
+            >
+                Добавить устройство
+            </Button>
+
+            <CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>
+            <CreateDevice  show={deviceVisible} onHide={() => setDeviceVisible(false)}/>
+            <CreateType show={typedVisible} onHide={() => setTypeVisible(false)}/>
+        </Container>
     );
 };
 
