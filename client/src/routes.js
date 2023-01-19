@@ -14,7 +14,7 @@ export const authRoutes = [
     {
         path: BASKET_ROUTE ,
         Component: Basket
-    }
+    },
 ]
 //список маршрутов,на которые может перейти любой пользователь
 
@@ -34,6 +34,6 @@ export const publicRoutes = [
     {
         path:DEVICE_ROUTE + '/:id' ,
         Component: DevicePage
-    }
+    },
 
 ]

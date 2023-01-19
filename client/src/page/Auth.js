@@ -21,17 +21,19 @@ const Auth = observer(() => {
         try {
             let data;
             if (isLogin) {
-                 data = await login(email, password);
+                data = await login(email, password);
             } else {
-                 data = await registration(email, password);
+                data = await registration(email, password);
             }
             user.setUser(user)
             user.setIsAuth(true)
             history.push(SHOP_ROUTE)
-        }catch (e){
+        } catch (e) {
             alert(e.response.data.message)
         }
+
     }
+
     return (
         <Container
             className="d-flex justify-content-center align-items-center"

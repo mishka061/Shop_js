@@ -3,7 +3,6 @@ import axios from "axios";
 //для обычных запросов,без авторизации
 const $host = axios.create({
     baseURL: process.env.REACT_APP_API_URL
-
 })
 
 //с авторизацией

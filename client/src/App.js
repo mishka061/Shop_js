@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from "react";
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./components/AppRouter";
-import Navbar from "./components/NavBar"
 import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userApi";
 import {Spinner} from "react-bootstrap";
+import NavBar from "./components/NavBar";
 
 
 const App = observer(() => {
@@ -18,15 +18,17 @@ const App = observer(() => {
             user.setIsAuth(true)
         }).finally(() => setLoading(false))
     }, [])
+
     if (loading) {
         return <Spinner animation={"grow"}/>
     }
 
     return (
         <BrowserRouter>
-            <Navbar></Navbar>
-            <AppRouter/>
+            <NavBar />
+            <AppRouter />
         </BrowserRouter>
     );
 });
+
 export default App;
