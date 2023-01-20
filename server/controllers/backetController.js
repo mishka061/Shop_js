@@ -1,4 +1,4 @@
-const {Brand} = require('../models/models');
+const {Basket} = require('../models/models');
 const ApiError = require('../error/ApiError');
 
 // Извлекаем название типа
@@ -6,18 +6,18 @@ const ApiError = require('../error/ApiError');
 // Извлекаем тип(id присвоится автоматически)
 // Получаем все типы объектов
 
-class BrandController {
+class BacketController {
     async create(req, res) {
         const {name} = req.body
-        const brand = await Brand.create({name})
+        const brand = await Basket.create({name})
         return res.json(brand)
     }
 
     async getAll(req, res) {
-        const brands = await Brand.findAll()
+        const brands = await Basket.findAll()
         return res.json(brands)
     }
 
 }
 
-module.exports = new BrandController()
+module.exports = new BacketController()

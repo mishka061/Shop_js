@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import bigStar from '../assets/bigstar.png'
 import {useParams} from "react-router-dom";
-import {fetchOneDevice} from "../http/deviceApi";
+import {fetchOneDevice} from "../http/deviceAPI";
 
 
 const DevicePage = () => {
@@ -10,7 +10,7 @@ const DevicePage = () => {
     const {id} = useParams()
     useEffect(() => {
         fetchOneDevice(id).then(data => setDevice(data))
-    }, [])
+    }, [id])
 
     return (
         <Container className="mt-3">
