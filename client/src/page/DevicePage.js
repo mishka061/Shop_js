@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
+import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import bigStar from '../assets/bigstar.png'
 import {useParams} from "react-router-dom";
-import {fetchOneDevice} from "../http/deviceAPI";
+import { fetchOneDevice} from "../http/deviceAPI";
 
 
 const DevicePage = () => {
@@ -11,6 +11,15 @@ const DevicePage = () => {
     useEffect(() => {
         fetchOneDevice(id).then(data => setDevice(data))
     }, [id])
+
+
+  //  // ------- Создаём функцию для записи ------- //
+  //  const add = () => {
+  //      const formData = new FormData()
+  //      formData.append('deviceId', id)
+  //      addToBasket(formData).then(response => alert(`Товар ` + device.name + ` был добавлен в вашу корзину!`))
+  //  }
+
 
     return (
         <Container className="mt-3">
@@ -30,13 +39,8 @@ const DevicePage = () => {
                     </Row>
                 </Col>
                 <Col md={4}>
-                    <Card
-                        className="d-flex flex-column align-items-center justify-content-around"
-                        style={{width: 300, height: 300, fontSize: 32, border: '5px solid lightgray'}}
-                    >
-                        <h3>От: {device.price} руб.</h3>
-                        <Button variant={"outline-dark"}>Добавить в корзину</Button>
-                    </Card>
+                    <h3>От: {device.price} руб.</h3>
+                    <Button variant={"outline-dark"}>Добавить в корзину</Button>
                 </Col>
             </Row>
             <Row className="d-flex flex-column m-3">

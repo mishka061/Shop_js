@@ -15,9 +15,11 @@ const NavBar = observer(() => {
     const {user} = useContext(Context)
     const history = useHistory()
 
+
     const logOut = () => {
         user.setUser({})
         user.setIsAuth(false)
+        localStorage.removeItem('token')
     }
     return (
         <Navbar bg="dark" variant="dark">
@@ -64,3 +66,4 @@ const NavBar = observer(() => {
 });
 
 export default NavBar;
+

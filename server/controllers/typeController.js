@@ -18,7 +18,7 @@ class TypeController {
         return res.json(types)
 
     }
-
 }
 
 module.exports = new TypeController()
+

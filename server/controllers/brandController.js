@@ -1,4 +1,4 @@
-const {Brand} = require('../models/models');
+const {Brand: {create, findAll}, Brand} = require('../models/models');
 const ApiError = require('../error/ApiError');
 
 // Извлекаем название типа

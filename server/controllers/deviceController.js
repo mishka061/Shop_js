@@ -1,6 +1,6 @@
 const uuid = require('uuid')// Импортируем генератор рандомных id
 const path = require('path');
-const {Device, DeviceInfo} = require('../models/models')
+const {Device, DeviceInfo, Type} = require('../models/models')
 const ApiError = require('../error/ApiError');
 
 class DeviceController {
@@ -73,6 +73,15 @@ class DeviceController {
         )
         return res.json(device)
     }
+
+    async delete(req, res){
+        //// Удаление одного девайса
+        //let {id} = req.query
+        //const device = await Device.removeAttribute({id})
+        //return res.json(device)
+
+    }
+
 }
 
 module.exports = new DeviceController()

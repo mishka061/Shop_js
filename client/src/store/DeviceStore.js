@@ -26,6 +26,14 @@ export default class DeviceStore {
     setDevices(devices) {
         this._devices = devices
     }
+ //   setBaskets(basket){
+ //       this._baskets = basket
+            //   }
+//
+
+
+
+
 
     setSelectedType(type) {
         this.setPage(1)
@@ -41,6 +49,9 @@ export default class DeviceStore {
     setTotalCount(count) {
         this._totalCount = count
     }
+//   get basket() {
+//       return this._baskets
+//   }
 
     get types() {
         return this._types
@@ -66,4 +77,6 @@ export default class DeviceStore {
     get limit() {
         return this._limit
     }
+
+
 }
